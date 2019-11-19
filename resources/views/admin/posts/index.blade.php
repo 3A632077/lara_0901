@@ -24,7 +24,9 @@
     </div>
 </div>
 <!-- /.row -->
-
+<form action="{{route('admin.posts.destroy',$post->id)}}" method="post">
+    {{csrf_token()}}
+    {{method_field('DELETE')}}
 <div class="row">
     <div class="col-lg-12">
         <div class="table-responsive">
@@ -55,5 +57,6 @@
         </div>
     </div>
 </div>
+</form>
 <!-- /.row -->
 @endsection
