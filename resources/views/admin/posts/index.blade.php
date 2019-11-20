@@ -24,9 +24,7 @@
     </div>
 </div>
 <!-- /.row -->
-<form action="{{route('admin.posts.destroy',$post->id)}}" method="post">
-    {{csrf_token()}}
-    {{method_field('DELETE')}}
+
 <div class="row">
     <div class="col-lg-12">
         <div class="table-responsive">
@@ -48,7 +46,12 @@
                         <td>
                             <a href="{{ route('admin.posts.edit', $id) }}">編輯</a>
                             /
-                            <a href="#">刪除</a>
+                            <form action="{{route('admin.posts.destroy',$post->id)}}" method="post">
+                                {{csrf_token()}}
+                                {{method_field('DELETE')}}
+
+                                <button class="btn btn-link">刪除</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
@@ -57,6 +60,6 @@
         </div>
     </div>
 </div>
-</form>
+
 <!-- /.row -->
 @endsection
