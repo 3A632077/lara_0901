@@ -28,11 +28,11 @@ class AdminPostsController extends Controller
         $data=['post'=>$post];
         return view('admin.posts.edit',$data);
     }
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
         //
     }
-    public function update(Request $request,$id)
+    public function update(PostRequest $request)
     {
         //
     }
