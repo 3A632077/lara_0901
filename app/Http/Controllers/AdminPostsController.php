@@ -31,10 +31,15 @@ class AdminPostsController extends Controller
     public function store(PostRequest $request)
     {
         //
+        Post::create($request->all());
+        return redirect()->route('admin.posts.index');
     }
-    public function update(PostRequest $request)
+    public function update(PostRequest $request,$id)
     {
         //
+        $post=Post::find($id);
+        $post->update($request->all());
+        return redirect()->route('admin.posts.index');
     }
     public function destroy($id)
     {
